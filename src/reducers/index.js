@@ -1,4 +1,4 @@
-import { ADD_CONFIG, UPDATE_CONFIG, SET_DATE } from "../constants/action-types";
+import { UPDATE_CONFIG, SET_DATE } from "../constants/action-types";
 import moment from "moment";
 const initialState = {
   chartData: {
@@ -71,7 +71,7 @@ const initialState = {
         size: 1,
       },
       xaxis: {
-        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        categories: ["1", "2", "3", "4", "5", "6", "7"],
         title: {
           text: "Month",
         },

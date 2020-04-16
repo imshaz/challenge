@@ -1,17 +1,14 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import DayPickerInput from "react-day-picker/DayPickerInput";
 
 import moment from "moment";
 import "react-day-picker/lib/style.css";
-import Cards from "./component/cards";
 import { useSelector, useDispatch } from "react-redux";
 import { UPDATE_CONFIG } from "./constants/action-types";
 
 function ChartComp() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.chartData);
-  const [active, setActive] = useState(0);
   const [selectedDate, setDate] = useState(moment(new Date()));
 
   // range
