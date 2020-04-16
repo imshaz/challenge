@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  position: relative;
+  max-width: 500px;
 }
 
 .btn {
@@ -11,8 +13,28 @@
 }
 
 /* Style the active class (and buttons on mouse-over) */
+
 .active,
 .btn:hover {
   background-color: #666;
   color: white;
+}
+
+.apexcharts-legend {
+  right: 0px;
+  position: absolute;
+  left: auto !important;
+  top: 0px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.mixed-chart {
+  margin-top: 40px;
+  margin: 0 auto;
+}
+
+.fab {
+  position: absolute;
+  right: 0;
 }
