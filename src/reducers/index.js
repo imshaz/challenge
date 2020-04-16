@@ -1,10 +1,14 @@
-import { ADD_CONFIG } from "../constants/action-types";
-
+import { ADD_CONFIG, UPDATE_CONFIG, SET_DATE } from "../constants/action-types";
+import moment from "moment";
 const initialState = {
-  articles: {
+  chartData: {
     series: [
       {
-        name: "asdas",
+        name: `${moment(new Date()).format("MMM Do")} 2020 - ${moment(
+          new Date()
+        )
+          .subtract(6, "days")
+          .format("MMM Do")} 2020`,
         data: [
           Math.floor(Math.random() * 90 + 10),
           Math.floor(Math.random() * 90 + 10),
@@ -87,12 +91,22 @@ const initialState = {
         offsetX: -5,
       },
     },
+    date: new Date(),
   },
 };
 
 function rootReducer(state = initialState, action) {
-  if (action.type === ADD_CONFIG) {
-    state.articles.push(action.payload);
+  console.log("action", action);
+
+  // if (action.type === ADD_CONFIG) {
+  //   state.articles.push(action.payload);
+  // }
+  if (action.type === UPDATE_CONFIG) {
+    console.log(action.payload);
+    return { chartData: { ...action.payload } };
+  }
+  if (action.type === SET_DATE) {
+    return { date: { ...action.payload } };
   }
   return state;
 }

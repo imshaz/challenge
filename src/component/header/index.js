@@ -1,7 +1,53 @@
 import React from "react";
 import ChartComp from "../../ChartComp";
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import moment from "moment";
+import "react-day-picker/lib/style.css";
+import { useSelector, useDispatch } from "react-redux";
+import { UPDATE_CONFIG } from "../../constants/action-types";
 
 function Header() {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.chartData);
+
+  const updateGraph = (e) => {
+    console.log(moment(e).format("MMM Do"));
+    const temp = Object.assign({}, data);
+
+    temp.series = [
+      {
+        name: `${moment(e).subtract(6, "day").format("MMM Do")} 2020 ${moment(
+          e
+        ).format("MMM Do")} 2020`,
+
+        data: [
+          Math.floor(Math.random() * 90 + 10),
+          Math.floor(Math.random() * 90 + 10),
+          Math.floor(Math.random() * 90 + 10),
+          Math.floor(Math.random() * 90 + 10),
+          Math.floor(Math.random() * 90 + 10),
+          Math.floor(Math.random() * 90 + 10),
+          Math.floor(Math.random() * 90 + 10),
+        ],
+      },
+      {
+        name: `${moment(e).subtract(6, "day").format("MMM Do")} 2019 ${moment(
+          e
+        ).format("MMM Do")} 2019`,
+        data: [
+          Math.floor(Math.random() * 90),
+          Math.floor(Math.random() * 90),
+          Math.floor(Math.random() * 90),
+          Math.floor(Math.random() * 90),
+          Math.floor(Math.random() * 90),
+          Math.floor(Math.random() * 90),
+          Math.floor(Math.random() * 90),
+        ],
+      },
+    ];
+    dispatch({ type: UPDATE_CONFIG, payload: temp });
+    // setState(temp);
+  };
   return (
     <header className="header">
       <div className="container-fluid">
@@ -58,7 +104,12 @@ function Header() {
           <div className="business-bottom-right">
             <span className="bottom-circle week"> 4w </span>
             <span className="date">
-              Aug.06.20{" "}
+              <DayPickerInput
+                value={new Date()}
+                onDayChange={(day) => {
+                  updateGraph(day);
+                }}
+              />
               <a href="JavaScript:void(0);">
                 <i class="fa fa-calendar"></i>
               </a>
