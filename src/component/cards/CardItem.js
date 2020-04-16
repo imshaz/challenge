@@ -3,7 +3,7 @@ import React from "react";
 function CardItem(props) {
   const profit = true;
   return (
-    <div className="list">
+    <div onClick={props.releod} className="list">
       <h4 className="title">{props.title}</h4>
       <div className="pricing">
         <h4>${Math.floor(Math.random() * 10000)}</h4>

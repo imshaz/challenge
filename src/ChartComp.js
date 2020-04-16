@@ -4,6 +4,7 @@ import DayPickerInput from "react-day-picker/DayPickerInput";
 
 import moment from "moment";
 import "react-day-picker/lib/style.css";
+import Cards from "./component/cards";
 
 function ChartComp() {
   const [active, setActive] = useState(0);
@@ -168,38 +169,47 @@ function ChartComp() {
           />
         </div>
       </div>
-
-      <button
-        id="1"
-        onClick={(e) => {
-          setActive(1);
-          updateGraph(e);
-        }}
-        className={`btn ${active === 1 ? "active" : ""}`}
-      >
-        1
-      </button>
-      <button
-        id="2"
-        onClick={(e) => {
-          setActive(2);
-          updateGraph(e);
-        }}
-        className={`btn ${active === 2 ? "active" : ""}`}
-      >
-        2
-      </button>
-      <button
-        id="3"
-        onClick={(e) => {
-          setActive(3);
-          updateGraph(e);
-        }}
-        className={`btn ${active === 3 ? "active" : ""}`}
-      >
-        3
-      </button>
-
+      <div className="cards-pos">
+        <Cards
+          reload={() => {
+            updateGraph();
+          }}
+        />
+      </div>
+      <div class="content business-content">
+        <div class="container">
+          <button
+            id="1"
+            onClick={(e) => {
+              setActive(1);
+              updateGraph(e);
+            }}
+            className={`btn ${active === 1 ? "active" : ""}`}
+          >
+            1
+          </button>
+          <button
+            id="2"
+            onClick={(e) => {
+              setActive(2);
+              updateGraph(e);
+            }}
+            className={`btn ${active === 2 ? "active" : ""}`}
+          >
+            2
+          </button>
+          <button
+            id="3"
+            onClick={(e) => {
+              setActive(3);
+              updateGraph(e);
+            }}
+            className={`btn ${active === 3 ? "active" : ""}`}
+          >
+            3
+          </button>
+        </div>
+      </div>
       {/* <input type="button" value="one" onClick={(e) => { updateGraph(e) }} /> */}
       {/* <input className="btn active" type="button" value="two" onClick={(e) => { updateGraph(e) }} /> */}
     </div>

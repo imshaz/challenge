@@ -1,7 +1,11 @@
 import React from "react";
 import CardItem from "./CardItem";
 
-function Cards() {
+function Cards(props) {
+  function reload() {
+    console.log("rel");
+    props.reload();
+  }
   const cardList = [
     "Avg.Ticket Size",
     "Product Revenue",
@@ -15,7 +19,7 @@ function Cards() {
       <div class="container">
         <div class="business-listing">
           {cardList.map((item) => {
-            return <CardItem title={item} />;
+            return <CardItem reload={reload} title={item} />;
           })}
         </div>
       </div>

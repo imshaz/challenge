@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChartComp from "./ChartComp";
+import { useSelector } from "react-redux";
 import SideDrawer from "./component/SideDrawer";
 
 import Button from "@material-ui/core/Button";
@@ -21,6 +21,7 @@ function App() {
     setAnchorEl(null);
   };
 
+  console.log(useSelector((state) => state.articles));
   return (
     <div className="App">
       <Header />

@@ -38,3 +38,9 @@
   position: absolute;
   right: 0;
 }
+
+.cards-pos {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
