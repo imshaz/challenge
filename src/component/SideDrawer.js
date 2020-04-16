@@ -2,9 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-// import Divider from '@material-ui/core/Divider';
 import ListItem from "@material-ui/core/ListItem";
-
 import ListItemText from "@material-ui/core/ListItemText";
 
 const useStyles = makeStyles({
@@ -25,15 +23,15 @@ export default function SideDrawer(props) {
         <div className={classes.list} role="presentation">
           <List component="nav">
             <ListItem button>
-              <ListItemText>Event starts in</ListItemText>
+              <ListItemText>Dashboard</ListItemText>
             </ListItem>
 
             <ListItem button>
-              <ListItemText>Venue NFO</ListItemText>
+              <ListItemText>Profile</ListItemText>
             </ListItem>
 
             <ListItem button>
-              <ListItemText>Highlights</ListItemText>
+              <ListItemText>Logout</ListItemText>
             </ListItem>
             <ListItem button>
               <ListItemText>Pricing</ListItemText>

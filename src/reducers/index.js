@@ -96,13 +96,7 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-  console.log("action", action);
-
-  // if (action.type === ADD_CONFIG) {
-  //   state.articles.push(action.payload);
-  // }
   if (action.type === UPDATE_CONFIG) {
-    console.log(action.payload);
     return { chartData: { ...action.payload } };
   }
   if (action.type === SET_DATE) {

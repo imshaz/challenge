@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   position: relative;
-  max-width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .btn {
@@ -35,8 +36,9 @@
 }
 
 .fab {
-  position: absolute;
+  position: relative;
   right: 0;
+  margin-bottom: 50px;
 }
 
 .cards-pos {

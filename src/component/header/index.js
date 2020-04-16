@@ -46,7 +46,6 @@ function Header() {
       },
     ];
     dispatch({ type: UPDATE_CONFIG, payload: temp });
-    // setState(temp);
   };
   return (
     <header className="header">
@@ -81,7 +80,6 @@ function Header() {
             </div>
           </div>
           <div className="graph">
-            {/* <img src={require("../../assets/images/graph.png")} /> */}
             <ChartComp />
           </div>
           <div className="date-duration">
@@ -110,8 +108,8 @@ function Header() {
                   updateGraph(day);
                 }}
               />
-              <a href="JavaScript:void(0);">
-                <i class="fa fa-calendar"></i>
+              <a href="">
+                <i className="fa fa-calendar"></i>
               </a>
             </span>
           </div>

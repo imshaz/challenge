@@ -15,11 +15,11 @@ function Cards(props) {
     "Product Revenue",
   ];
   return (
-    <div class="content business-content">
-      <div class="container">
-        <div class="business-listing">
-          {cardList.map((item) => {
-            return <CardItem reload={reload} title={item} />;
+    <div className="content business-content">
+      <div className="container">
+        <div className="business-listing">
+          {cardList.map((item, index) => {
+            return <CardItem key={index} reload={reload} title={item} />;
           })}
         </div>
       </div>
