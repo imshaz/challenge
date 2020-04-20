@@ -1,48 +1,5 @@
 .App {
   text-align: center;
   position: relative;
-  max-width: 600px;
   margin: 0 auto;
-}
-
-.btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-/* Style the active class (and buttons on mouse-over) */
-
-.active,
-.btn:hover {
-  background-color: #666;
-  color: white;
-}
-
-.apexcharts-legend {
-  right: 0px;
-  position: absolute;
-  left: auto !important;
-  top: 0px !important;
-  display: flex;
-  flex-direction: column;
-}
-
-.mixed-chart {
-  margin-top: 40px;
-  margin: 0 auto;
-}
-
-.fab {
-  position: relative;
-  right: 0;
-  margin-bottom: 50px;
-}
-
-.cards-pos {
-  position: absolute;
-  top: 70%;
-  width: 100%;
 }

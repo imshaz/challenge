@@ -6,7 +6,13 @@ function Cards(props) {
 
   return (
     <div className="content business-content">
-      <CardItem />
+      {
+        // render three card for now
+        [1, 2, 3].map(item => {
+
+          return <CardItem />
+        })
+      }
     </div>
   );
 }

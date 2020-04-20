@@ -7,17 +7,21 @@ import Fab from "@material-ui/core/Fab";
 import "./App.css";
 import Header from "./component/header";
 import Cards from "./component/cards";
-
+import LogFrom from './component/log/LogFrom'
 function App() {
   const [drawerOpen, setDrawer] = useState(false);
-
-
 
   return (
     <div className="App">
       <Header />
       <SideDrawer open={drawerOpen} onClose={() => setDrawer(false)} />
-      <Cards />
+      <div class="main">
+        <div class="main-container">
+          <LogFrom />
+          <Cards />
+
+        </div>
+      </div>
     </div>
   );
 }
