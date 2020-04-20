@@ -1,5 +1,4 @@
-import { ADD_LOG, DELETE_LOG, FILTER_LOG } from "../constants/action-types";
-// import moment from "moment";
+import { ADD_LOG, DELETE_LOG } from "../constants/action-types";
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {

@@ -7,7 +7,6 @@ function Cards(props) {
   const [filter, setFilter] = React.useState('')
   const logs = useSelector(state => state.logs)
 
-  // Filter result based on title and message
   const filteredLogs = logs.filter(log => {
     return log.title.toLowerCase().includes(filter.toLowerCase()) || log.message.toLowerCase().includes(filter.toLowerCase())
   }).reverse();
@@ -20,7 +19,7 @@ function Cards(props) {
 
       {
         logs.length > 0 ? filteredLogs.map(item => {
-          return <CardItem id={item.id} title={item.title} message={item.message} time={item.time} />
+          return <CardItem key={item.id} id={item.id} title={item.title} message={item.message} time={item.time} />
         }) : null
       }
     </div>
