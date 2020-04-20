@@ -1,22 +1,30 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import PropTypes from 'prop-types';
+import moment from 'moment';
+import { DELETE_LOG } from "../../constants/action-types";
 
 function CardItem(props) {
+  const { id, title, message, time } = props
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.chartData);
-
-
+  const deleteLog = (id) => {
+    dispatch({ type: DELETE_LOG, payload: id })
+  }
   return (
-    <div class="paragraph-wrapper">
-      <h2 class="title">Alarm hight energy consumption is triggered</h2>
-      <p class="text">Energy consumption of this asset is high. Please resolve this issue ASAP</p>
-      <div class="date">
-        8:11:03 AM, 05-14-18
-                </div>
-      <span class="delete">Delete</span>
+    <div className="paragraph-wrapper">
+      <h2 className="title">{title}</h2>
+      <p className="text">{message}</p>
+      <div className="date">
+        {moment(time).format("hh:MM:SS A, DD-MM-YY")}
+      </div>
+      <span onClick={() => deleteLog(id)} className="delete">Delete</span>
     </div>
   );
 }
+CardItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  // time: PropTypes.string.isRequired
+};
 
 export default CardItem;
